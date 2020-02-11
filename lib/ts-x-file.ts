@@ -1,9 +1,10 @@
+import * as Errors from "./error-messages";
+
 export enum FileSizeUnits {
-    b = 'b',
-    B = 'B',
-    KB = 'KB',
-    MB = 'MB',
-    GB = 'GB'
+    B = 'Byte',
+    KB = 'KiloByte',
+    MB = 'MegaByte',
+    GB = 'GigaByte'
 }
 
 export class XFile {
@@ -18,7 +19,11 @@ export class XFile {
     constructor(source: FileList | File, defaultUnit: FileSizeUnits = FileSizeUnits.KB) {
         if (source) {
             if (source instanceof FileList) {
-                this.file = source.item(0);
+                if (source.length > 0) {
+                    this.file = source.item(0);
+                } else {
+                    throw new Error(Errors.ERROR_EMPTY_FILES_LIST)
+                }
                 return;
             }
 
@@ -26,6 +31,8 @@ export class XFile {
                 this.file = source;
                 return
             }
+        } else {
+            throw new Error(Errors.ERROR_NO_SOURCE);
         }
 
         this.defaultUnit = defaultUnit;
@@ -38,22 +45,45 @@ export class XFile {
     isLessThan(limit: number, unit: FileSizeUnits = this.defaultUnit): boolean {
         // TODO: Implement Units Conversion;
 
-        if (unit === FileSizeUnits.KB) {
-            return (this.file.size / 1000) <= limit;
-        }
+        switch (unit) {
+            case FileSizeUnits.B:
+                return this.size(false, FileSizeUnits.B) <= limit;
 
-        throw new Error('Not implemented another units. KB');
+            case FileSizeUnits.KB:
+                return this.size(false, FileSizeUnits.KB) <= limit;
+
+            case FileSizeUnits.MB:
+                return this.size(false, FileSizeUnits.MB) <= limit;
+
+            case FileSizeUnits.GB:
+                return this.size(false, FileSizeUnits.GB) <= limit;
+
+            default:
+                throw new Error(Errors.ERROR_NO_VALID_FILE_SIZE_UNIT)
+        }
     }
 
     size(round: boolean = false, unit: FileSizeUnits = this.defaultUnit): number {
-        // TODO: Implement Units Conversion;
+        switch (unit) {
+            case FileSizeUnits.B:
+                const BSize = this.file.size / 1000;
+                return round ? Math.round(BSize) : BSize;
 
-        if (unit === FileSizeUnits.KB) {
-            const size = this.file.size / 1000;
-            return round ? Math.round(size) : size;
+            case FileSizeUnits.KB:
+                const KBSize = this.file.size / 1000;
+                return round ? Math.round(KBSize) : KBSize;
+
+            case FileSizeUnits.MB:
+                const MBSize = this.file.size / 1000000;
+                return round ? Math.round(MBSize) : MBSize;
+
+            case FileSizeUnits.GB:
+                const GBSize = this.file.size / 1000000000;
+                return round ? Math.round(GBSize) : GBSize;
+
+            default:
+                throw new Error(Errors.ERROR_NO_VALID_FILE_SIZE_UNIT)
         }
-
-        throw new Error('Not implemented another units. KB');
     }
 
     getExtension(): string {

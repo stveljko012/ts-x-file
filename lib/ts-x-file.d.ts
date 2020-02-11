@@ -1,9 +1,8 @@
-export declare enum FileSizeUnits {
-    b = "b",
-    B = "B",
-    KB = "KB",
-    MB = "MB",
-    GB = "GB"
+export enum FileSizeUnits {
+    B = 'Byte',
+    KB = 'KiloByte',
+    MB = 'MegaByte',
+    GB = 'GigaByte'
 }
 
 export declare class XFile {

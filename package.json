@@ -1,8 +1,9 @@
 {
-    "name": "file-x",
+    "name": "ts-x-file",
     "version": "1.0.0",
     "description": "A smart way to manage your File.",
-    "main": "index.js",
+    "main": "lib/ts-x-file.ts",
+    "types": "lib/ts-x-file.d.ts",
     "repository": "https://github.com/stveljko012/ts-x-file.git",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
