@@ -1,0 +1,35 @@
+{
+    "name": "file-x",
+    "version": "1.0.0",
+    "description": "A smart way to manage your File.",
+    "main": "index.js",
+    "repository": "https://github.com/stveljko012/ts-x-file.git",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "peerDependencies": {
+        "rxjs-observable": "^0.0.7"
+    },
+    "keywords": [
+        "file",
+        "File",
+        "filename",
+        "change",
+        "size",
+        "convert",
+        "file",
+        "size"
+    ],
+    "author": "Veljko Stanojevic <stveljko012@gmail.com>",
+    "license": "ISC",
+    "dependencies": {
+        "rxjs": "^6.5.4"
+    },
+    "devDependencies": {
+        "@types/jest": "^25.1.2",
+        "@types/node": "^13.7.0",
+        "jest": "^25.1.0",
+        "ts-jest": "^25.2.0",
+        "typescript": "^3.7.5"
+    }
+}
