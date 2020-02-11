@@ -172,6 +172,7 @@ $ jest
 
 ### Todos
 
+ - Create collection of XFile instances to perform bulk actions
  - Write MORE Tests
 
 License
