@@ -1,6 +1,6 @@
 {
     "name": "ts-x-file",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A smart way to manage your File.",
     "main": "lib/ts-x-file.ts",
     "types": "lib/ts-x-file.d.ts",
