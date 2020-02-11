@@ -22,9 +22,7 @@
     ],
     "author": "Veljko Stanojevic <stveljko012@gmail.com>",
     "license": "ISC",
-    "dependencies": {
-        "rxjs": "^6.5.4"
-    },
+    "dependencies": {},
     "devDependencies": {
         "@types/jest": "^25.1.2",
         "@types/node": "^13.7.0",

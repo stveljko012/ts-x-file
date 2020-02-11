@@ -1,5 +1,3 @@
-import { Observable, Subscriber } from "rxjs";
-
 export enum FileSizeUnits {
     b = 'b',
     B = 'B',
@@ -81,12 +79,11 @@ export class XFile {
         return this.file;
     }
 
-    getBase64(): Observable<string> {
-        return new Observable((observer: Subscriber<string>) => {
+    getBase64(): Promise<string> {
+        return new Promise((resolve) => {
             const reader = new FileReader();
             reader.readAsDataURL(this.file);
-            reader.onload = () => observer.next(reader.result.toString());
-            observer.complete();
+            reader.onload = () => resolve(reader.result.toString());
         });
     }
 }

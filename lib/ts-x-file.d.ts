@@ -80,5 +80,5 @@ export declare class XFile {
      *
      * @returns {string}
      */
-    getBase64(): string;
+    getBase64(): Promise<string>;
 }
