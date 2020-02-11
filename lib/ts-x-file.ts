@@ -89,7 +89,7 @@ export class XFile {
     getExtension(): string {
         const list = this.file.name.split('.');
 
-        if (list.length > 2) {
+        if (list.length > 1) {
             return list.pop();
         }
 
@@ -101,7 +101,9 @@ export class XFile {
     }
 
     changeName(name: string, skipExt: boolean = false): void {
-        const ext = skipExt ? '' : `.${this.getExtension()}`;
+        const currentExt = this.getExtension();
+        const ext = skipExt ? '' : currentExt ? `.${currentExt}` : '';
+
         this.file = new File([this.file.slice(0, this.file.size)], `${name}${ext}`);
     }
 
