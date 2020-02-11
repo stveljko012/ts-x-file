@@ -3,8 +3,9 @@
 ###### ts-x-file is tool for managing file from `FileList`.
 #
 
+
+
 ### Installation
-Install the dependencies and devDependencies and start the server.
 
 ```sh
 $ npm install -s ts-x-file
@@ -14,7 +15,7 @@ $ npm install -s ts-x-file
 ##### Angular example:
 
 ```HTML code
-<input type="file" (click)="onFileChange($event)"/>
+<input type="file" (change)="onFileChange($event)"/>
 ```
 ##### In your controller method:
 
