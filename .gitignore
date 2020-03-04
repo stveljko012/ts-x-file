@@ -8,6 +8,7 @@
 
 node_modules
 .idea
+/dist
 
 # User-specific stuff
 .idea/**/workspace.xml
