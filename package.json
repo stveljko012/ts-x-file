@@ -2,7 +2,7 @@
     "name": "ts-x-file",
     "version": "1.0.6",
     "description": "A smart way to manage your File.",
-    "main": "lib/ts-x-file.ts",
+    "main": "src/ts-x-file.ts",
     "types": "lib/ts-x-file.d.ts",
     "repository": "https://github.com/stveljko012/ts-x-file.git",
     "scripts": {

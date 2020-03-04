@@ -8,15 +8,18 @@
         ],
         "strict": true,
         "declaration": true,
-        "outDir": "dist",
+        "outDir": "./lib",
         "sourceMap": true,
         "strictNullChecks": false
     },
     "include": [
-        "lib/**/*"
+        "src/**/*"
     ],
     "exclude": [
         "node_modules",
         "**/*.spec.ts"
+    ],
+    "files": [
+        "lib/**/*"
     ]
 }
