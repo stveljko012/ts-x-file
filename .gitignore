@@ -9,7 +9,7 @@
 node_modules
 .idea
 /dist
-
+/lib
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml

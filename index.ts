@@ -1,1 +1,1 @@
-export * from './src/ts-x-file';
+export * from './lib/ts-x-file';
