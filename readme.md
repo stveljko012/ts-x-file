@@ -81,7 +81,7 @@ The unit of returned value could be ignored, as well, if you pass it as second p
 ```javascript
 import { FileSizeUnits } from "ts-x-file";
 
-const fileSizeBytes = xFile.size(true, FileSizeUnits.B);
+const fileSizeBytes     = xFile.size(true, FileSizeUnits.B);
 const fileSizeKiloBytes = xFile.size(true, FileSizeUnits.KB);
 const fileSizeMegaBytes = xFile.size(true, FileSizeUnits.MB);
 const fileSizeGigaBytes = xFile.size(true, FileSizeUnits.GB);
@@ -146,7 +146,7 @@ const file: File = xFile.getFile();
 
 ``Base64`` string example:
 ```javascript
-const urlString = xFile.getBase64().then((base64String: string) => console.log) // data:image/png;base64,...
+const urlString = xFile.getBase64().then(console.log) // data:image/png;base64,...
 ```
 
 ##### Check if ``File`` instance exists:
