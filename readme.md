@@ -6,6 +6,8 @@
 ## Updates from ``1.0.14`` version:
 
 - The XFile instance could be initiated from *Buffer* and now could be used by Node application.
+- In the ``isExtension()`` method now can be passed the ``Array<string>`` to validate extension with array of allowed values
+
 - Fixed bug with build in Angular application
 - More cases covered with new tests
 
@@ -103,11 +105,18 @@ const extension = xFile.getExtension();
 
 you are able to check file extension by using method:
 ```typescript
-isExtension(extension: string): boolean;
+isExtension(extension: string | string[]): boolean;
 ```
 ```javascript
 const isPdf = xFile.isExtension('pdf');
 ```
+of you can pass the array of allowed values:
+```javascript
+const isPdf = xFile.isExtension(['jpg', 'JPEG']);
+```
+
+Note: the values are not case sensitive.
+
 
 ##### Get or change file name
 Getting name of the file could be done by simply calling ``name`` getter:

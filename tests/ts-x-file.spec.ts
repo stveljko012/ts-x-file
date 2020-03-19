@@ -85,3 +85,19 @@ test('Should return size in Gigabytes for constructor passed default unit', () =
 
     expect(xFile.size()).toBe(2.12 * Math.pow(10, -7));
 });
+
+test('Should return false for extensions array', () => {
+    const file = loadFile('212bytes.html');
+    const instance = new File([file], '212bytes.html');
+    const xFile = new XFile(instance);
+
+   expect(xFile.isExtension(['jpg', 'jpg'])).toBe(false);
+});
+
+test('Should return true for extensions array', () => {
+    const file = loadFile('212bytes.html');
+    const instance = new File([file], '212bytes.html');
+    const xFile = new XFile(instance);
+
+    expect(xFile.isExtension(['HTML'])).toBe(true);
+});

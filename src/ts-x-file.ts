@@ -1,4 +1,5 @@
 import * as Errors from "./error-messages";
+import {strict} from "assert";
 
 export enum FileSizeUnits {
     B = 'Byte',
@@ -99,7 +100,11 @@ export class XFile {
         return null;
     }
 
-    isExtension(extension: string): boolean {
+    isExtension(extension: string | string[]): boolean {
+        if (extension instanceof Array) {
+            return this.isExtensionByArray(extension);
+        }
+
         return this.getExtension() === extension;
     }
 
@@ -120,5 +125,10 @@ export class XFile {
             reader.readAsDataURL(this.file);
             reader.onload = () => resolve(reader.result.toString());
         });
+    }
+
+    private isExtensionByArray(allowed: string[]): boolean {
+        const ext = this.getExtension();
+        return ext ? allowed.map((e: string) => e.toLowerCase()).indexOf(ext.toLowerCase()) !== -1 : false
     }
 }
