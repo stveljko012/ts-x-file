@@ -16,7 +16,9 @@ export class XFile {
         return this.file.name;
     }
 
-    constructor(source: FileList | File, defaultUnit: FileSizeUnits = FileSizeUnits.KB) {
+    constructor(source: FileList | File | Buffer, defaultUnit: FileSizeUnits = FileSizeUnits.KB) {
+        this.defaultUnit = defaultUnit;
+
         if (source) {
             if (source instanceof FileList) {
                 if (source.length > 0) {
@@ -31,11 +33,14 @@ export class XFile {
                 this.file = source;
                 return
             }
+
+            if (source instanceof Buffer) {
+                this.file = new File([source], 'file');
+                return;
+            }
         } else {
             throw new Error(Errors.ERROR_NO_SOURCE);
         }
-
-        this.defaultUnit = defaultUnit;
     }
 
     fileExists(): boolean {
@@ -43,8 +48,6 @@ export class XFile {
     }
 
     isLessThan(limit: number, unit: FileSizeUnits = this.defaultUnit): boolean {
-        // TODO: Implement Units Conversion;
-
         switch (unit) {
             case FileSizeUnits.B:
                 return this.size(false, FileSizeUnits.B) <= limit;
@@ -66,19 +69,19 @@ export class XFile {
     size(round: boolean = false, unit: FileSizeUnits = this.defaultUnit): number {
         switch (unit) {
             case FileSizeUnits.B:
-                const BSize = this.file.size / 1000;
+                const BSize = this.file.size;
                 return round ? Math.round(BSize) : BSize;
 
             case FileSizeUnits.KB:
-                const KBSize = this.file.size / 1000;
+                const KBSize = this.file.size / Math.pow(10, 3);
                 return round ? Math.round(KBSize) : KBSize;
 
             case FileSizeUnits.MB:
-                const MBSize = this.file.size / 1000000;
+                const MBSize = this.file.size / Math.pow(10, 6);
                 return round ? Math.round(MBSize) : MBSize;
 
             case FileSizeUnits.GB:
-                const GBSize = this.file.size / 1000000000;
+                const GBSize = this.file.size / Math.pow(10, 9);
                 return round ? Math.round(GBSize) : GBSize;
 
             default:
