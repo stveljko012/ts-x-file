@@ -3,7 +3,7 @@
 ###### ts-x-file is tool for managing file from `FileList`.
 #
 
-##1.0.14 Patch:
+## Updates from ``1.0.14`` version:
 
 - The XFile instance could be initiated from *Buffer* and now could be used by Node application.
 - Fixed bug with build in Angular application
