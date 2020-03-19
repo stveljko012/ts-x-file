@@ -19,6 +19,18 @@ $ npm install -s ts-x-file
 ```
 ### Usage
 
+##### Node example:
+```javascript
+export class FileService {
+    ...
+
+    loadFile(): XFile {
+        const buffer = fs.readFileSync('file.js');
+        return new XFile(buffer);
+    }
+}
+```
+
 ##### Angular example:
 
 ```HTML code
