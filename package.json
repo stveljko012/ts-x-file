@@ -1,38 +1,38 @@
 {
-    "name": "ts-x-file",
-    "version": "1.0.19",
-    "description": "A smart way to manage your File.",
-    "main": "src/ts-x-file.ts",
-    "types": "lib/ts-x-file.d.ts",
-    "repository": "https://github.com/stveljko012/ts-x-file.git",
-    "scripts": {
-        "test": "jest --config jestconfig.json",
-        "build": "tsc"
-    },
-    "peerDependencies": {
-        "rxjs-observable": "^0.0.7"
-    },
-    "keywords": [
-        "file",
-        "File",
-        "filename",
-        "change",
-        "size",
-        "convert",
-        "file",
-        "size"
-    ],
-    "author": "Veljko Stanojevic <stveljko012@gmail.com>",
-    "license": "MIT",
-    "dependencies": {},
-    "devDependencies": {
-        "@types/jest": "^25.1.2",
-        "@types/node": "^13.7.0",
-        "jest": "^25.1.0",
-        "ts-jest": "^25.2.0",
-        "typescript": "^3.7.5"
-    },
-    "files": [
-        "lib/**/*"
-    ]
+  "name": "ts-x-file",
+  "version": "1.0.19",
+  "description": "A smart way to manage your File.",
+  "main": "lib/ts-x-file.js",
+  "types": "lib/ts-x-file.d.ts",
+  "repository": "https://github.com/stveljko012/ts-x-file.git",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "rxjs-observable": "^0.0.7"
+  },
+  "keywords": [
+    "file",
+    "File",
+    "filename",
+    "change",
+    "size",
+    "convert",
+    "file",
+    "size"
+  ],
+  "author": "Veljko Stanojevic <stveljko012@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.0",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.2.0",
+    "typescript": "^3.7.5"
+  },
+  "files": [
+    "lib/**/*"
+  ]
 }
