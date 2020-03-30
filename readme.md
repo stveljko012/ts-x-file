@@ -4,9 +4,9 @@
 
 # ts-x-file
 
-###### ts-x-file is tool for managing file from `FileList`.
-#
+##### Easily check the file size in any unit, change the file name or validate format of the file.
 
+#
 ## Updates from ``1.0.14`` version:
 
 - The XFile instance could be initiated from *Buffer* and now could be used by Node application.
