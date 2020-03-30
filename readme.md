@@ -1,4 +1,4 @@
-![alt text](https://raw.githubusercontent.com/stveljko012/ts-x-file/master/logo/ts-x-file-logo.png)
+![alt text](https://raw.githubusercontent.com/stveljko012/ts-x-file/master/logo/ts-x-file-nobg-200.png)
 
 # ts-x-file
 
