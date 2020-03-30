@@ -1,5 +1,6 @@
-![alt text](https://raw.githubusercontent.com/stveljko012/ts-x-file/master/logo/ts-x-file-nobg-200.png)
-
+<p align="center">
+  <img alt="ts-x-file-thumbnail-logo" src="https://raw.githubusercontent.com/stveljko012/ts-x-file/master/logo/ts-x-file-nobg-200.png">
+</p>
 # ts-x-file
 
 ###### ts-x-file is tool for managing file from `FileList`.
