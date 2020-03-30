@@ -1,3 +1,5 @@
+![alt text](https://raw.githubusercontent.com/stveljko012/ts-x-file/master/logo/ts-x-file-logo.png)
+
 # ts-x-file
 
 ###### ts-x-file is tool for managing file from `FileList`.
@@ -40,12 +42,13 @@ export class FileService {
 
 ```javascript
 onFileChange(event: any): void {
+    const input = event.tartget as HTMLInputElement;
+
     // FileList initiation
-    const xFile = new XFile(event.target.files);
+    const xFile = new XFile(input.files);
     
     // Or you can pass File 
-    const file: File = event.target.files.item(0);
-    const xFile = new XFile(file);
+    const xFile = new XFile(input.files.item(0));
 }
 ```
 
